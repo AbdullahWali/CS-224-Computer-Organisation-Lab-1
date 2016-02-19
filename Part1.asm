@@ -24,14 +24,13 @@ __start:
 	li $v0, 5  
 	syscall #Get 32 bit Integer From user
 
-	move $s0, $v0 #store contents in s0
 	li $s1, 50 # Put a value in s1 to use in arithmetic operations
-	
 	add $s0, $s0, $s0 #add s0 to itslef
 	sub $s0, $s0, $s1 # substract: s0 - s1
 	mul $s0, $s0, $s1 # multiplay: s0 * s1
 	
-	li $t0 , 0x10010040
+	lui $t0 , 0x1000
+	ori $t0, $t0, 0x8004
 	sw  $s0, 0($t0) #store s0 in memory location at $t0
 	
 	addi $s0, $0, 0 #Put value 0 in s0
@@ -81,6 +80,9 @@ __start:
 	srlv $s3, $s0, $t0 #logical shift right
 	srav $s3, $s0, $t0 #arithmetic shift right
 	
+	
+	li $v0, 10
+	syscall #exit
 	
 	######################################################
 	#     						######

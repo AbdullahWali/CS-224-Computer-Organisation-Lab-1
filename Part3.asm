@@ -1,5 +1,5 @@
 #	Author: Abdullah Wali
-#	Part 2 of Lab 1
+#	Part 3 of Lab 1
 #	Using MIPS for sorting and searching
 
 	#####################################################
